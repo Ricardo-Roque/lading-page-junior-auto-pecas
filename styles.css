@@ -299,13 +299,6 @@ svg {
   transform: translateY(0) scale(0.99);
 }
 
-.action-button--primary {
-  background: var(--electric);
-  color: white;
-  border-color: var(--electric);
-  box-shadow: 0 12px 28px rgba(6, 92, 255, 0.25);
-}
-
 .action-icon {
   display: grid;
   height: 2.55rem;
@@ -315,11 +308,6 @@ svg {
   border-radius: 0.62rem;
   background: rgba(6, 92, 255, 0.14);
   color: var(--light-blue);
-}
-
-.action-button--primary .action-icon {
-  background: rgba(240, 244, 252, 0.14);
-  color: var(--soft);
 }
 
 .action-icon--whatsapp {
