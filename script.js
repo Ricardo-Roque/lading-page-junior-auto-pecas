@@ -10,8 +10,6 @@ const copy = {
     review: "Avalie nossa loja",
     about: "Quem somos",
     qr: "QR Code",
-    aboutTitle: "Quem somos",
-    aboutText: "A Junior Auto Pecas atende Joinville com pecas automotivas, agilidade no orcamento e suporte para encontrar o item certo.",
     qrTitle: "QR Code",
     qrText: "Na versao final, este botao abre ou baixa o QR Code do cartao digital."
   },
@@ -24,8 +22,6 @@ const copy = {
     review: "Review our store",
     about: "About us",
     qr: "QR Code",
-    aboutTitle: "About us",
-    aboutText: "Junior Auto Pecas serves Joinville with automotive parts, agile quotes and support to find the right item.",
     qrTitle: "QR Code",
     qrText: "In the final version, this button opens or downloads the digital card QR Code."
   },
@@ -38,15 +34,12 @@ const copy = {
     review: "Evalua nuestra tienda",
     about: "Quienes somos",
     qr: "QR Code",
-    aboutTitle: "Quienes somos",
-    aboutText: "Junior Auto Pecas atiende Joinville con autopartes, presupuestos agiles y soporte para encontrar la pieza correcta.",
     qrTitle: "QR Code",
     qrText: "En la version final, este boton abre o descarga el QR Code de la tarjeta digital."
   }
 };
 
 const modalActions = {
-  about: ["aboutTitle", "aboutText"],
   qr: ["qrTitle", "qrText"]
 };
 

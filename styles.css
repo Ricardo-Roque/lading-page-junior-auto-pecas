@@ -328,11 +328,23 @@ svg {
 }
 
 .action-icon--whatsapp svg {
-  height: 1.7rem;
-  width: 1.7rem;
+  height: 1.45rem;
+  width: 1.45rem;
   fill: currentColor;
   stroke: none;
 }
+
+.action-icon__image {
+  display: block;
+  width: 2.2rem;
+  height: 2.2rem;
+  object-fit: contain;
+}
+
+.action-icon--mercado-livre {
+  background: rgba(6, 92, 255, 0.1);
+}
+
 
 .modal {
   width: min(calc(100% - 2rem), 25rem);
