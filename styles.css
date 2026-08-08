@@ -17,7 +17,10 @@
 
 html,
 body {
+  height: 100%;
   min-height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
 }
 
 html {
@@ -30,6 +33,9 @@ body {
   font-family: Satoshi, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--ink);
   background: var(--navy);
+  position: fixed;
+  inset: 0;
+  width: 100%;
 }
 
 button,
@@ -71,16 +77,21 @@ svg {
 
 .app-shell {
   position: relative;
+  height: 100dvh;
   min-height: 100dvh;
   overflow: hidden;
+  touch-action: none;
   background: radial-gradient(circle at 50% 0%, rgba(6, 92, 255, 0.24), transparent 34%), var(--navy);
 }
 
 .hero {
   position: relative;
+  height: 100dvh;
   min-height: 100dvh;
-  padding: max(1rem, env(safe-area-inset-top)) 1rem calc(50dvh + env(safe-area-inset-bottom));
+  overflow: hidden;
+  padding: max(1rem, env(safe-area-inset-top)) 1rem calc(56dvh + env(safe-area-inset-bottom));
   isolation: isolate;
+  touch-action: none;
 }
 
 .hero__image,
@@ -99,6 +110,8 @@ svg {
 
 .hero__wash {
   z-index: -2;
+  pointer-events: none;
+  touch-action: none;
   background:
     linear-gradient(180deg, rgba(240, 244, 252, 0.88) 0%, rgba(240, 244, 252, 0.54) 38%, rgba(27, 29, 54, 0.18) 67%, rgba(27, 29, 54, 0.82) 100%),
     linear-gradient(90deg, rgba(27, 29, 54, 0.2), transparent 42%, rgba(27, 29, 54, 0.18));
@@ -110,6 +123,7 @@ svg {
   justify-content: flex-end;
   margin: 0 auto;
   width: min(100%, 29rem);
+  touch-action: none;
 }
 
 .language-switcher {
@@ -122,6 +136,7 @@ svg {
   background: rgba(240, 244, 252, 0.72);
   box-shadow: 0 10px 30px rgba(27, 29, 54, 0.12);
   backdrop-filter: blur(18px);
+  touch-action: manipulation;
 }
 
 .lang-button {
@@ -152,8 +167,8 @@ svg {
   display: grid;
   position: fixed;
   left: 50%;
-  top: max(4.75rem, calc(env(safe-area-inset-top) + 4.75rem));
-  bottom: calc(50dvh + 0.45rem);
+  top: max(3.15rem, calc(env(safe-area-inset-top) + 3.15rem));
+  bottom: calc(56dvh + 0.35rem);
   z-index: 1;
   width: min(100% - 2rem, 29rem);
   transform: translateX(-50%);
@@ -175,8 +190,8 @@ svg {
   bottom: max(0.35rem, env(safe-area-inset-bottom));
   z-index: 5;
   display: flex;
-  height: min(52dvh, 30rem);
-  max-height: calc(52dvh - 0.35rem - env(safe-area-inset-bottom));
+  height: min(56dvh, 33rem);
+  max-height: calc(56dvh - 0.35rem - env(safe-area-inset-bottom));
   flex-direction: column;
   width: min(calc(100% - 1.5rem), 22rem);
   transform: translateX(50%);
@@ -188,6 +203,7 @@ svg {
     linear-gradient(180deg, rgba(27, 29, 54, 0.96) 0%, rgba(12, 16, 34, 0.94) 100%);
   box-shadow: var(--shadow);
   backdrop-filter: blur(24px) saturate(1.15);
+  touch-action: none;
 }
 
 .action-grid {
@@ -199,6 +215,8 @@ svg {
   padding: 0.25rem 0.2rem 0.25rem 0;
   overscroll-behavior: contain;
   scrollbar-width: none;
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
 }
 
 .action-grid::-webkit-scrollbar {
@@ -300,12 +318,13 @@ svg {
 }
 
 .action-button--primary .action-icon {
-  background: rgba(255, 255, 255, 0.16);
-  color: white;
+  background: rgba(240, 244, 252, 0.14);
+  color: var(--soft);
 }
 
 .action-icon--whatsapp {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(6, 92, 255, 0.14);
+  color: var(--light-blue);
 }
 
 .action-icon--whatsapp svg {
@@ -387,22 +406,22 @@ svg {
 
 @media (max-height: 740px) {
   .hero {
-    padding-bottom: calc(50dvh + env(safe-area-inset-bottom));
+    padding-bottom: calc(58dvh + env(safe-area-inset-bottom));
   }
 
   .hero__content {
-    top: max(4rem, calc(env(safe-area-inset-top) + 4rem));
-    bottom: calc(50dvh + 0.35rem);
+    top: max(3rem, calc(env(safe-area-inset-top) + 3rem));
+    bottom: calc(58dvh + 0.3rem);
   }
 
   .hero-logo {
     width: min(94vw, 30rem);
-    max-height: min(33vh, 18rem);
+    max-height: min(28vh, 16rem);
   }
 
   .action-panel {
-    height: min(52dvh, 26rem);
-    max-height: calc(52dvh - 0.35rem - env(safe-area-inset-bottom));
+    height: min(58dvh, 29rem);
+    max-height: calc(58dvh - 0.35rem - env(safe-area-inset-bottom));
   }
 
   .action-button {
