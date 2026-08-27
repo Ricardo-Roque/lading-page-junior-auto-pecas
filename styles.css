@@ -26,6 +26,7 @@ body {
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  background: var(--navy);
 }
 
 body {
@@ -376,35 +377,68 @@ svg {
 }
 
 @media (min-width: 760px) {
+  .app-shell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: safe center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
   .hero {
-    padding-bottom: 2rem;
+    position: static;
+    height: auto;
+    min-height: 0;
+    flex: 0 0 auto;
+    padding: 0;
   }
 
   .topbar {
-    margin-left: auto;
-    margin-right: auto;
+    position: fixed;
+    top: max(1rem, env(safe-area-inset-top));
+    right: max(2rem, calc((100vw - 26rem) / 2));
+    left: auto;
+    width: auto;
+    margin: 0;
+    z-index: 10;
   }
 
   .hero__content {
-    left: max(2rem, calc((100vw - 70rem) / 2));
-    right: auto;
-    top: max(6rem, calc(env(safe-area-inset-top) + 6rem));
-    bottom: 2rem;
-    width: min(42vw, 29rem);
+    position: static;
+    inset: auto;
+    width: auto;
+    max-width: min(85vw, 40rem);
     transform: none;
+    pointer-events: auto;
+  }
+
+  .hero-logo {
+    width: min(80vw, 34rem);
+    max-height: 32vh;
   }
 
   .action-panel {
-    right: max(2rem, calc((100vw - 70rem) / 2));
-    bottom: 2rem;
-    height: min(52dvh, 30rem);
-    max-height: calc(100dvh - 4rem);
-    width: min(22rem, calc(100% - 4rem));
+    position: relative;
+    right: auto;
+    bottom: auto;
+    flex: 0 1 auto;
+    height: auto;
+    max-height: calc(100dvh - 3rem);
+    width: min(24rem, calc(100vw - 3rem));
     transform: none;
+  }
+
+  .action-grid {
+    overflow-y: auto;
+  }
+
+  .action-button {
+    height: 3.7rem;
   }
 }
 
-@media (max-height: 740px) {
+@media (max-width: 759px) and (max-height: 740px) {
   .hero {
     padding-bottom: calc(58dvh + env(safe-area-inset-bottom));
   }
