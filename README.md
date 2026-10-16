@@ -1,6 +1,6 @@
-# Landing Page Junior Auto Pecas
+# Landing Page Junior Autopeças
 
-Piloto estatico de cartao digital para a Junior Auto Pecas, com layout mobile-first, seletor de idioma e menu de acoes.
+Piloto estatico de cartao digital para a Junior Autopeças, com layout mobile-first, seletor de idioma e menu de acoes.
 
 ## Como visualizar
 

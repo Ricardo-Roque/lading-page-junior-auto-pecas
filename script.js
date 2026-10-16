@@ -2,45 +2,45 @@
 
 const copy = {
   pt: {
-    storeWhatsapp: "Fale com a Loja",
-    marketplace: "Mercado Livre",
-    marketplaceWhatsapp: "Atendimento ML",
-    location: "Como chegar",
-    call: "Ligue para nos",
-    review: "Avalie nossa loja",
-    about: "Quem somos",
-    qr: "QR Code",
+    storeWhatsapp: "Atendimento Joinville",
+    marketplace: "Loja Oficial Mercado Livre",
+    marketplaceWhatsapp: "Atendimento Mercado Livre",
+    location: "Como Chegar",
+    call: "Ligue para Nós",
+    review: "Avalie no Google",
+    about: "Sobre a Junior",
+    qr: "Acesse pelo QR Code",
     qrTitle: "QR Code",
-    qrText: "Na versao final, este botao abre ou baixa o QR Code do cartao digital."
+    qrText: "Aponte a câmera do celular para acessar o cartão digital."
   },
   en: {
-    storeWhatsapp: "Talk to the Store",
-    marketplace: "Mercado Livre",
-    marketplaceWhatsapp: "ML Support",
-    location: "How to get there",
-    call: "Call us",
-    review: "Review our store",
-    about: "About us",
-    qr: "QR Code",
+    storeWhatsapp: "Joinville Support",
+    marketplace: "Official Mercado Livre Store",
+    marketplaceWhatsapp: "Mercado Livre Support",
+    location: "How to Get Here",
+    call: "Call Us",
+    review: "Review on Google",
+    about: "About Junior",
+    qr: "Access via QR Code",
     qrTitle: "QR Code",
-    qrText: "In the final version, this button opens or downloads the digital card QR Code."
+    qrText: "Point your phone camera to open the digital card."
   },
   es: {
-    storeWhatsapp: "Habla con la tienda",
-    marketplace: "Mercado Livre",
-    marketplaceWhatsapp: "Atencion ML",
-    location: "Como llegar",
-    call: "Llamanos",
-    review: "Evalua nuestra tienda",
-    about: "Quienes somos",
-    qr: "QR Code",
+    storeWhatsapp: "Atención Joinville",
+    marketplace: "Tienda Oficial Mercado Livre",
+    marketplaceWhatsapp: "Atención Mercado Livre",
+    location: "Cómo Llegar",
+    call: "Llámanos",
+    review: "Evalúa en Google",
+    about: "Sobre Junior",
+    qr: "Accede por Código QR",
     qrTitle: "QR Code",
-    qrText: "En la version final, este boton abre o descarga el QR Code de la tarjeta digital."
+    qrText: "Apunta la cámara del celular para abrir la tarjeta digital."
   }
 };
 
 const modalActions = {
-  qr: ["qrTitle", "qrText"]
+  qr: ["qrTitle", "qrText", true]
 };
 
 let currentLang = "pt";
@@ -48,6 +48,7 @@ let currentLang = "pt";
 const modal = document.querySelector("#modal");
 const modalTitle = document.querySelector("#modalTitle");
 const modalText = document.querySelector("#modalText");
+const modalQr = document.querySelector("#modalQr");
 const actionGrid = document.querySelector(".action-grid");
 const scrollRail = document.querySelector(".scroll-rail");
 const scrollTrack = document.querySelector(".scroll-rail__track");
@@ -75,13 +76,17 @@ function setLanguage(lang) {
   requestAnimationFrame(updateScrollRail);
 }
 
-function openModal(title, text) {
+function openModal(title, text, showQr = false) {
   if (!modal || !modalTitle || !modalText) {
     return;
   }
 
   modalTitle.textContent = title;
   modalText.textContent = text;
+
+  if (modalQr) {
+    modalQr.hidden = !showQr;
+  }
 
   if (typeof modal.showModal === "function") {
     modal.showModal();
@@ -104,7 +109,7 @@ document.querySelectorAll("[data-action]").forEach((button) => {
     }
 
     const text = copy[currentLang];
-    openModal(text[actionKeys[0]], text[actionKeys[1]]);
+    openModal(text[actionKeys[0]], text[actionKeys[1]], actionKeys[2]);
   });
 });
 

@@ -376,6 +376,19 @@ svg {
   line-height: 1.5;
 }
 
+.modal__qr {
+  display: block;
+  width: min(100%, 18rem);
+  height: auto;
+  margin: 1rem auto 0;
+  border-radius: 0.8rem;
+  background: #fff;
+}
+
+.modal__qr[hidden] {
+  display: none;
+}
+
 @media (min-width: 760px) {
   .app-shell {
     display: flex;
